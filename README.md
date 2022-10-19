@@ -12,6 +12,12 @@ In the first exercise, scipy.optimize.minimize and scipy.sparse.linalg.lgmres ro
 Results for the solution with three techniques of the same problem are presented below.
 
 As seen from Figure XX, (GMRES) method converges to the solution with less steps than the other two approaches.
+<p align="center">
+<img src="HW1/figures/BFGS.png" width="200" />
+<img src="HW1/figures/custom.png" width="200" />
+<img src="HW1/figures/lmgres.png" width="200" />
+<img src="HW1/figures/neldermead.png" width="200" />
+</p>
 
 ## Installation
 External packages are used in this project as listed below:
