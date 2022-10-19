@@ -15,9 +15,9 @@ As seen from Figure XX, (GMRES) method converges to the solution with less steps
 
 ## Installation
 External packages are used in this project as listed below:
-. numpy v.1.23.4
-. scipy v.1.9.2.
-. matplotlib v.3.6.1
+- numpy v.1.23.4
+- scipy v.1.9.2.
+- matplotlib v.3.6.1
 
 
 ## Usage
