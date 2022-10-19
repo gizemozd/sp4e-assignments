@@ -16,6 +16,8 @@ As seen from the presented figures LMGRES and GMRES methods converge to the solu
 <p align="center">
 <img src="HW1/figures/BFGS.png" width="200" />
 <img src="HW1/figures/custom.png" width="200" />
+</p>
+<p align="center">
 <img src="HW1/figures/lgmres.png" width="200" />
 <img src="HW1/figures/neldermead.png" width="200" />
 </p>
@@ -25,7 +27,6 @@ External packages are used in this project as listed below:
 - numpy v.1.23.4
 - scipy v.1.9.2.
 - matplotlib v.3.6.1
-
 
 ## Usage
 ### The HW1 directory contains the following files:
@@ -47,9 +48,9 @@ To plot the results, simply append `--plot` to the command.
 To save the results, append --export_path and specify the path where the figures will be saved.
 
 To reproduce the figures, run the following commands:
->>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer BFGS  --plot --export_path figures/BFGS.png 
->>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer lgmres  --plot --export_path figures/lgmres.png 
->>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres  --plot --export_path figures/custom_gmres.png 
+```python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer BFGS  --plot --export_path figures/BFGS.png 
+```python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer lgmres  --plot --export_path figures/lgmres.png 
+```python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres  --plot --export_path figures/custom_gmres.png 
 
 
 ## Authors
