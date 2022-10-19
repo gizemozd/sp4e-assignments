@@ -65,7 +65,7 @@ def calc_surface(plotxlim: List[np.ndarray], plotylim: List[np.ndarray],
     return x1, x2, funcValue
 
 
-def surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iterations):
+def surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iterations, **kwargs):
     """Plot the surface function.
 
     Parameters
@@ -83,9 +83,14 @@ def surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iter
     funcValue_iterations : _type_
         _description_
     """
+    azim = kwargs.get('azim',130)
+    elev = kwargs.get('elev',50)
+    format_img = kwargs.get('format_img', 'png')
+    export_path = kwargs.get('export_path', None)
+
     fig = plt.figure()
     ax = fig.gca(projection='3d')   # Create the axes
-
+    ax.view_init(azim=azim, elev=elev)
     # Plot the 3d surface
     surface = ax.plot_surface(x1, x2, funcValue,
                               alpha=0.5,
@@ -93,16 +98,22 @@ def surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iter
                               rstride=2,
                               cstride=2)
 
-    surface = ax.contour3D(x1, x2, funcValue)
+    surface = ax.contour3D(x1, x2, funcValue, colors='black')
 
     # ax.scatter3D(x1_iterations, x2_iterations, funcValue_iterations, linewidths=5);
     ax.plot(x1_iterations, x2_iterations, funcValue_iterations, 'or--')
 
-    ax.view_init(30, 180)
-
     # Set some labels
-    ax.set_xlabel('x1')
-    ax.set_ylabel('x2')
-    ax.set_zlabel('Function Value')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_zlabel('function value')
+
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_zticks([])
+
+    if export_path is not None:
+        fig.savefig(export_path, bbox_inches='tight', format=format_img)
+        print(f'Figure is saved at {export_path}')
 
     plt.show()
