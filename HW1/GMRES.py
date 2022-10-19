@@ -94,25 +94,26 @@ def gmres(
     max_iter: int = 1e3,
     threshold: float = 1e-9
 ) -> Tuple[np.ndarray, List[float], List[np.ndarray]]:
-    """_summary_
+    """ Solves the linear system of equations by using generalized minimal residual method.
 
     Parameters
     ----------
     A : np.ndarray
-        _description_
+        matrix A
     b : np.ndarray
-        _description_
+        vector b
     x : np.ndarray
-        _description_
+        initial values
     max_iter : int, optional
-        _description_, by default 1e3
+        maximum number of iterations to solve the system, by default 1e3
     threshold : float, optional
-        _description_, by default 1e-9
+        threshold of error to stop the iterations, by default 1e-9
 
     Returns
     -------
     Tuple[np.ndarray, List[float], List[np.ndarray]]
-        _description_
+        returns the solution x, a list containing the error over iterations,
+        and list containing the solution x at each iteration
     """
     x_iterations = [x]
 
