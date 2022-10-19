@@ -15,9 +15,9 @@ def calc_iterations(x_iterations: List[np.ndarray], A: np.ndarray, b: np.ndarray
     x_iterations : List[np.ndarray]
         _description_
     A : np.ndarray
-        _description_
+        matrix A
     b : np.ndarray
-        _description_
+        vector b
 
     Returns
     -------

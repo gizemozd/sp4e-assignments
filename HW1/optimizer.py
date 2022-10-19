@@ -15,9 +15,9 @@ def surface_func(x: np.ndarray, matrices: Tuple[np.ndarray, np.ndarray]) -> floa
     Parameters
     ----------
     x : np.ndarray
-        _description_
+        x is 
     matrices : Tuple[np.ndarray,np.ndarray]
-        _description_
+        Includes matrix A and vector b
 
     Returns
     -------
@@ -54,13 +54,13 @@ def solve_system(A: np.ndarray, b: np.ndarray, x0: np.ndarray, method: str = Non
     Parameters
     ----------
     A : np.ndarray
-        _description_
+        matrix A
     b : np.ndarray
-        _description_
+        vector b
     x0 : np.ndarray
-        _description_
+        initial values
     method : str, optional
-        _description_, by default None
+        methods to solve the problem with an option of 'lmgres, by default minimizer
 
     Returns
     -------
