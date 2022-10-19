@@ -13,7 +13,7 @@ def calc_iterations(x_iterations: List[np.ndarray], A: np.ndarray, b: np.ndarray
     Parameters
     ----------
     x_iterations : List[np.ndarray]
-        _description_
+        contains the x values during the minimization steps
     A : np.ndarray
         matrix A
     b : np.ndarray
@@ -22,7 +22,7 @@ def calc_iterations(x_iterations: List[np.ndarray], A: np.ndarray, b: np.ndarray
     Returns
     -------
     _type_
-        _description_
+        returns iterations of x=[x1, x2] and calculated surface funtion values
     """
     funcValue_iterations = []
     for x_iter in x_iterations:
@@ -41,20 +41,20 @@ def calc_surface(plotxlim: List[np.ndarray], plotylim: List[np.ndarray],
     Parameters
     ----------
     plotxlim : List[np.ndarray]
-        _description_
+        x-axis limits
     plotylim : List[np.ndarray]
-        _description_
+        y-axis limits
     A : np.ndarray
-        _description_
+        matrix A
     b : np.ndarray
-        _description_
+        vector b
     plotAxisOffset : float
-        _description_
+        offset for the changes in the x and y axes of the plot
 
     Returns
     -------
     _type_
-        _description_
+        x1,x2 values with their calculated surface function values for plotting
     """
     x1 = np.linspace(min(plotxlim) - plotAxisOffset, max(plotxlim) + plotAxisOffset, 100)
     x2 = np.linspace(min(plotylim) - plotAxisOffset, max(plotylim) + plotAxisOffset, 100)
@@ -71,17 +71,17 @@ def surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iter
     Parameters
     ----------
     x1 : _type_
-        _description_
+        x = [x1, x2]
     x2 : _type_
-        _description_
+        x = [x1, x2]
     funcValue : _type_
-        _description_
+        calculated function value
     x1_iterations : _type_
-        _description_
+        iterations on first element of x vector during the minimization
     x2_iterations : _type_
-        _description_
+        iterations on first element of x vector during the minimization
     funcValue_iterations : _type_
-        _description_
+        iterations on surface function value during the minimization
     """
     azim = kwargs.get('azim',130)
     elev = kwargs.get('elev',50)

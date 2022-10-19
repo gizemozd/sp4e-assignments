@@ -10,19 +10,19 @@ x_iterations = []
 
 def surface_func(x: np.ndarray, matrices: Tuple[np.ndarray, np.ndarray]) -> float:
     """Creates a surface function in the form:
-    ... formula here
+    S(x) = (1/2) * x^T * A - x^T * b
 
     Parameters
     ----------
     x : np.ndarray
-        x is 
+        x is a solution of system equation
     matrices : Tuple[np.ndarray,np.ndarray]
         Includes matrix A and vector b
 
     Returns
     -------
     float
-        _description_
+        calculated function value
     """
     x1, x2 = x
     A, b = matrices
@@ -36,12 +36,12 @@ def store_iterations(x: np.ndarray) -> List[np.ndarray]:
     Parameters
     ----------
     x : np.ndarray
-        _description_
+        x is a solution of system equation
 
     Returns
     -------
     List[np.ndarray]
-        _description_
+        contains x values at each iteration
     """
     global x_iterations
     x_iterations.append(x)
@@ -65,7 +65,7 @@ def solve_system(A: np.ndarray, b: np.ndarray, x0: np.ndarray, method: str = Non
     Returns
     -------
     np.ndarray
-        _description_
+        returns the solution of the system, x
     """
     if method == 'lgmres':
         x, _ = lgmres(A, b, callback=store_iterations)
