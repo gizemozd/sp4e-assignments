@@ -11,6 +11,9 @@
     >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer BFGS  --plot --export_path figures/BFGS.png 
     >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer lgmres  --plot --export_path figures/lgmres.png 
     >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres  --plot --export_path figures/custom_gmres.png 
+    >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer Nelder-Mead  --plot --export_path figures/neldermead.png 
+
+    For more methods, please check scipy.optimize.minimize documentation.
 
 """
 import argparse
@@ -47,7 +50,8 @@ def make_matrix_from_args(matrix_data, n_rows):
 
 if __name__ == '__main__':
 
-    print('################### EXERCISE 1 ###################')
+    print('EXERCISE 2')
+    print('_______________________________________________________')
 
     args = arg_parser()
 

@@ -10,7 +10,7 @@ x_iterations = []
 
 def surface_func(x: np.ndarray, matrices: Tuple[np.ndarray, np.ndarray]) -> float:
     """Creates a surface function in the form:
-    S(x) = (1/2) * x^T * A - x^T * b
+    S(x) = (1/2) * x^T * A * x - x^T * b
 
     Parameters
     ----------
@@ -23,12 +23,12 @@ def surface_func(x: np.ndarray, matrices: Tuple[np.ndarray, np.ndarray]) -> floa
     -------
     float
         calculated function value
-	
-	Note: this function assumes that A matrix has the size of (2,2) and b vector is (2,1)
+
+        Note: this function assumes that A matrix has the size of (2,2) and b vector is (2,)
     """
     x1, x2 = x
     A, b = matrices
-	
+
     return x1 * ((A[0, 0] * x1) / 2 + (A[1, 0]
                                        * x2) / 2) - b[1] * x2 - b[0] * x1 + x2 * ((A[0, 1] * x1) / 2 + (A[1, 1] * x2) / 2)
 
@@ -63,7 +63,9 @@ def solve_system(A: np.ndarray, b: np.ndarray, x0: np.ndarray, method: str = Non
     x0 : np.ndarray
         initial values
     method : str, optional
-        methods to solve the problem with an option of 'lmgres, by default minimizer
+        minimizer to solve the problemm wit, by default None
+        which uses the default method in scipy.optimize.minimize (BFGS)
+
 
     Returns
     -------
