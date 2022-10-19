@@ -114,7 +114,7 @@ def gmres(
     Tuple[np.ndarray, List[float], List[np.ndarray]]
         _description_
     """
-    x_iterations = []
+    x_iterations = [x]
 
     # use x as the initial vector
     r = b - multiply_matrix_w_vector(A, x)

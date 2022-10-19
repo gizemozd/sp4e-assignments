@@ -68,8 +68,11 @@ def solve_system(A: np.ndarray, b: np.ndarray, x0: np.ndarray, method: str = Non
         returns the solution of the system, x
     """
     if method == 'lgmres':
-        x, _ = lgmres(A, b, callback=store_iterations)
-        return x
+        global x_iterations
+        x_iterations.append(x0)
+        res, _ = lgmres(A, b, x0=x0, tol=1e-9, callback=store_iterations)
+        return res
     else:
+        x_iterations.append(x0)
         result = minimize(surface_func, x0, args=[A, b], tol=1e-9, method=method, callback=store_iterations)
         return result.x
