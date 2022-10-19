@@ -14,10 +14,11 @@ Results for the solution with three techniques of the same problem are presented
 As seen from Figure XX, (GMRES) method converges to the solution with less steps than the other two approaches.
 
 ## Installation
-from typing import Tuple, List
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib import cm
+External packages are used in this project as listed below:
+. numpy v.1.23.4
+. scipy v.1.9.2.
+. matplotlib v.3.6.1
+
 
 ## Usage
 ### The HW1 directory contains the following files:
