@@ -21,7 +21,7 @@ def calc_iterations(x_iterations: List[np.ndarray], A: np.ndarray, b: np.ndarray
 
     Returns
     -------
-    _type_
+    List[np.ndarray], List[np.ndarray], List[np.ndarray]
         returns iterations of x=[x1, x2] and calculated surface funtion values
     """
     funcValue_iterations = []
@@ -53,7 +53,7 @@ def calc_surface(plotxlim: List[np.ndarray], plotylim: List[np.ndarray],
 
     Returns
     -------
-    _type_
+    List[np.ndarray], List[np.ndarray], List[np.ndarray],
         x1,x2 values with their calculated surface function values for plotting
     """
     x1 = np.linspace(min(plotxlim) - plotAxisOffset, max(plotxlim) + plotAxisOffset, 100)
@@ -70,17 +70,17 @@ def surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iter
 
     Parameters
     ----------
-    x1 : _type_
+    x1 : List[np.ndarray],
         x = [x1, x2]
-    x2 : _type_
+    x2 : List[np.ndarray],
         x = [x1, x2]
-    funcValue : _type_
+    funcValue : List[np.ndarray],
         calculated function value
-    x1_iterations : _type_
+    x1_iterations : List[np.ndarray],
         iterations on first element of x vector during the minimization
-    x2_iterations : _type_
+    x2_iterations : List[np.ndarray],
         iterations on first element of x vector during the minimization
-    funcValue_iterations : _type_
+    funcValue_iterations : List[np.ndarray],
         iterations on surface function value during the minimization
     """
     azim = kwargs.get('azim',130)
