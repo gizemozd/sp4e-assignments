@@ -23,9 +23,12 @@ def surface_func(x: np.ndarray, matrices: Tuple[np.ndarray, np.ndarray]) -> floa
     -------
     float
         calculated function value
+	
+	Note: this function assumes that A matrix has the size of (2,2) and b vector is (2,1)
     """
     x1, x2 = x
     A, b = matrices
+	
     return x1 * ((A[0, 0] * x1) / 2 + (A[1, 0]
                                        * x2) / 2) - b[1] * x2 - b[0] * x1 + x2 * ((A[0, 1] * x1) / 2 + (A[1, 1] * x2) / 2)
 

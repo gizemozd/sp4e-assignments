@@ -41,9 +41,9 @@ def calc_surface(plotxlim: List[np.ndarray], plotylim: List[np.ndarray],
     Parameters
     ----------
     plotxlim : List[np.ndarray]
-        x-axis limits
+        x-axis limits of the plot
     plotylim : List[np.ndarray]
-        y-axis limits
+        y-axis limits of the plot
     A : np.ndarray
         matrix A
     b : np.ndarray
