@@ -1,10 +1,16 @@
-""" 
+"""
     Exercise 2
     Runs the chosen optimizer with the given A matrix and vector.
     Example usage:
     >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres
 
     To plot the results, simply append `--plot` to the command.
+    To save the results, append --export_path and specify the path where the figures will be saved.
+
+    To reproduce the figures, run the following commands:
+    >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer BFGS  --plot --export_path figures/BFGS.png 
+    >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer lgmres  --plot --export_path figures/lgmres.png 
+    >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres  --plot --export_path figures/custom_gmres.png 
 
 """
 import argparse
@@ -24,9 +30,14 @@ def arg_parser():
     parser.add_argument('--minimizer', action='store', type=str,
                         help='Specify minimizer: custom_gmres, lgmres, BFGS etc.')
     parser.add_argument('--plot', action='store_true', default=False, help='Plot the results')
+    parser.add_argument(
+        '--export_path',
+        action='store',
+        type=str,
+        default=None,
+        help='Save the figures in the export path')
 
     return parser.parse_args()
-
 
 
 def make_matrix_from_args(matrix_data, n_rows):
@@ -62,4 +73,11 @@ if __name__ == '__main__':
     if args.plot:
         x1_iterations, x2_iterations, funcValue_iterations = calc_iterations(x_iterations, A, b)
         x1, x2, funcValue = calc_surface(x1_iterations, x2_iterations, A, b, plot_axis_offset)
-        surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iterations)
+        surface_plot(
+            x1, x2,
+            funcValue,
+            x1_iterations,
+            x2_iterations,
+            funcValue_iterations,
+            title=method,
+            export_path=args.export_path)
