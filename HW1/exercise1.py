@@ -21,27 +21,13 @@ if __name__ == '__main__':
     print(f'Matrix A: {A}\nVector b: {b}\nInitial values of x: {x0}')
     print('_______________________________________________________')
     
-    method = 'lgmres'
+    method = 'lgmres' # 'BFGS', 'Nelder-Mead
+
     x = solve_system(A, b, x0, method)
     x_iterations = store_iterations(x)
     x1_iterations, x2_iterations, funcValue_iterations = calc_iterations(x_iterations, A, b)
     x1, x2, funcValue = calc_surface(x1_iterations, x2_iterations, A, b, plot_axis_offset)
     print(f'Method is {method}, number of iterations is {len(x_iterations)}...')
     surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iterations, title=method)
+    x_iterations = []
 
-    method = 'BFGS'
-    x = solve_system(A, b, x0, method)
-    x_iterations = store_iterations(x)
-    x1_iterations, x2_iterations, funcValue_iterations = calc_iterations(x_iterations, A, b)
-    x1, x2, funcValue = calc_surface(x1_iterations, x2_iterations, A, b, plot_axis_offset)
-    print(f'Method is {method}, number of iterations is {len(x_iterations)}...')
-    surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iterations, title=method)
-
-
-    method = 'Nelder-Mead'
-    x = solve_system(A, b, x0, method)
-    x_iterations = store_iterations(x)
-    x1_iterations, x2_iterations, funcValue_iterations = calc_iterations(x_iterations, A, b)
-    x1, x2, funcValue = calc_surface(x1_iterations, x2_iterations, A, b, plot_axis_offset)
-    print(f'Method is {method}, number of iterations is {len(x_iterations)}...')
-    surface_plot(x1, x2, funcValue, x1_iterations, x2_iterations, funcValue_iterations, title=method)
