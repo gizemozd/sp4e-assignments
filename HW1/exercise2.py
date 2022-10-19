@@ -1,7 +1,8 @@
 """ 
+    Exercise 2
     Runs the chosen optimizer with the given A matrix and vector.
     Example usage:
-    >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --nrows_b 2 --minimizer custom_gmres
+    >>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres
 
     To plot the results, simply append `--plot` to the command.
 
@@ -20,7 +21,6 @@ def arg_parser():
     parser.add_argument('--matrixdata_A', action='store', type=float, nargs='+', help='A matrix elements')
     parser.add_argument('--nrows_A', action='store', type=int, help='Number of rows of A matrix')
     parser.add_argument('--vectordata_b', action='store', type=float, nargs='+', help='b vector elements')
-    parser.add_argument('--nrows_b', action='store', type=int, help='Number of rows of b vector')
     parser.add_argument('--minimizer', action='store', type=str,
                         help='Specify minimizer: custom_gmres, lgmres, BFGS etc.')
     parser.add_argument('--plot', action='store_true', default=False, help='Plot the results')
@@ -35,10 +35,13 @@ def make_matrix_from_args(matrix_data, n_rows):
 
 
 if __name__ == '__main__':
+
+    print('################### EXERCISE 1 ###################')
+
     args = arg_parser()
 
     A = make_matrix_from_args(args.matrixdata_A, args.nrows_A)
-    b = make_matrix_from_args(args.vectordata_b, args.nrows_b).flatten()
+    b = np.array(args.vectordata_b)
     x0 = np.zeros_like(b) + 10
 
     method = args.minimizer

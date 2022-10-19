@@ -89,7 +89,7 @@ def givens_rotation(v1, v2):
 
 
 def gmres(
-    A: np.ndararay, b: np.ndarray,
+    A: np.ndarray, b: np.ndarray,
     x: np.ndarray,
     max_iter: int = 1e3,
     threshold: float = 1e-9
@@ -98,7 +98,7 @@ def gmres(
 
     Parameters
     ----------
-    A : np.ndararay
+    A : np.ndarray
         _description_
     b : np.ndarray
         _description_
