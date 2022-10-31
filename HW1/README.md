@@ -42,15 +42,19 @@ Exercise1.py and exercise2.py are the main files for the exercises. All the argu
 Exercise 1: Runs the given optimization problem with three different methods: lgmres, BFGS, and Nelder-Mead. Please change the metrices A, b, and initial condition x0 to run the optimization for other matrices.
 Exercise 2: Runs the chosen optimizer with the given A matrix and vector.
 Example usage:
->>> python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres
+```
+python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres
+```
 
 To plot the results, simply append `--plot` to the command.
 To save the results, append --export_path and specify the path where the figures will be saved.
 
 To reproduce the figures, run the following commands:
-```python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer BFGS  --plot --export_path figures/BFGS.png
-```python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer lgmres  --plot --export_path figures/lgmres.png
-```python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres  --plot --export_path figures/custom_gmres.png
+```
+python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer BFGS  --plot --export_path figures/BFGS.png
+python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer lgmres  --plot --export_path figures/lgmres.png
+python python exercise2.py --matrixdata_A  8 1 1 3 --nrows_A 2 --vectordata_b 2 4 --minimizer custom_gmres  --plot --export_path figures/custom_gmres.png
+```
 
 
 ## Authors
