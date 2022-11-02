@@ -1,5 +1,5 @@
 #include "Series.hh"
-
+#include <memory>
 #ifndef HW2_DUMPERSERIES_H
 #define HW2_DUMPERSERIES_H
 
@@ -8,14 +8,14 @@
  */
 class DumperSeries {
 public:
-    DumperSeries(Series &series) : series(series) {}
+    DumperSeries(std::shared_ptr<Series> series) : series(series) {}
 
     virtual void dump(std::ostream &os) = 0;
 
     void setPrecision(unsigned int precision);
 
 protected:
-    Series &series;
+    std::shared_ptr<Series> series;
 };
 
 inline std::ostream &operator<<(std::ostream &stream, DumperSeries &_this) {

@@ -2,6 +2,7 @@
 #include <sstream>      // std::stringstream
 #include <cstring>
 #include <string>
+#include <memory>
 #include <fstream>
 #include "Series.hh"
 #include "ComputeArithmetic.hh"
@@ -19,9 +20,6 @@
  */
 int main(int argc, char *argv[]) {
 
-    ComputeArithmetic arithmetic_series;
-    ComputePi pi_series;
-
     std::stringstream ss;
 
     std::string exerciseType;
@@ -32,10 +30,10 @@ int main(int argc, char *argv[]) {
     double lowerLimit, upperLimit;
     std::string functionType;
 
-
-    if (strcmp(argv[1], "series") == 0) {
-        ss << argv[1] << ' ' << argv[2] << ' ' << argv[3] << ' ' << argv[4] << ' ' << argv[5] << ' ' << argv[6]
-           << std::endl;
+    // Argument parsing
+    if (strcmp(argv[1], "series") == 0)
+    {
+        ss << argv[1] << ' ' << argv[2] << ' ' << argv[3] << ' ' << argv[4] << ' ' << argv[5] << ' ' << argv[6] << std::endl;
         ss >> exerciseType >> maxIter >> freq >> seriesType >> outputOption >> separatorType;
 
         std::cout << "exercise type: " << exerciseType << std::endl;
@@ -54,38 +52,58 @@ int main(int argc, char *argv[]) {
             separator = ' ';
         }
 
+        // EXERCISE 2
+        // Shared pointers
+        std::shared_ptr<Series> sharedSeries;
+
         double result;
         if (seriesType == "arithmetic") {
-            result = arithmetic_series.compute(maxIter);
-            std::cout << result << std::endl;
-        } else if (seriesType == "pi") {
-            result = pi_series.compute(maxIter);
-            std::cout << result << std::endl;
-        } else {
-            std::cout << "Invalid series type choice is given" << std::endl;
+            auto seriesTypeSelected = std::make_shared<ComputeArithmetic>();
+            sharedSeries = seriesTypeSelected;
         }
+        else if (seriesType == "pi")
+        {
+            auto seriesTypeSelected = std::make_shared<ComputePi>();
+            sharedSeries = seriesTypeSelected;
+        }
+        else
+        {
+            std::cerr << "Invalid series type choice is given" << std::endl;
+        }
+        // Compute the series and print the result
+        result = sharedSeries->compute(maxIter);
+        std::cout << "The result of summation is: " << result << std::endl;
 
+        // EXERCISE 3
+        // Shared pointers
         if (outputOption == "print") {
-            PrintSeries printingSeries(pi_series, maxIter, freq);
+            PrintSeries printingSeries(sharedSeries, maxIter, freq);
+            printingSeries.dump();
 
-            std::string fileName = "output";
+            std::string fileName = "output_ex4";
             std::string relativePath = "..\\..\\";
             std::string fileExt = ".txt";
 
             relativePath = relativePath + fileName + fileExt;
-
+            // Exercise 4
             std::ofstream myfile(relativePath);
             myfile << printingSeries;
             myfile.close();
+            std::cout << "EXERCISE 4: File is saved in " << relativePath << std::endl;
 
-        } else if (outputOption == "write") {
-            WriteSeries testFileToOutput(pi_series, maxIter);
-            testFileToOutput.setSeparator(separator);
-            testFileToOutput.dump();
-        } else {
-            std::cout << "Invalid output choice is given" << std::endl;
         }
-    } else if (strcmp(argv[1], "integral") == 0) {
+        else if (outputOption == "write") {
+            WriteSeries writeSeries(sharedSeries, maxIter);
+            writeSeries.setSeparator(separator);
+            writeSeries.dump();
+        }
+        else {
+            std::cerr << "Invalid output choice is given" << std::endl;
+        }
+    }
+    // EXERCISE 6
+    else if (strcmp(argv[1], "integral") == 0)
+    {
         ss << argv[1] << ' ' << argv[2] << ' ' << argv[3] << ' ' << argv[4] << std::endl;
         ss >> exerciseType >> lowerLimit >> upperLimit >> functionType;
 
@@ -93,25 +111,29 @@ int main(int argc, char *argv[]) {
         std::cout << "lower limit: " << lowerLimit << std::endl;
         std::cout << "upper limit: " << upperLimit << std::endl;
         std::cout << "function type: " << functionType << std::endl;
+        // Define the function
+        std::function<double(double)> func;
 
-        if (functionType == "cube") {
+        if (functionType == "cube")
+        {
             // Case 1 - cube - min N needed: 1e2 for 2 digits: 0.255025
             auto calcCube = [](double x) { return 1.0 * x * x * x; };
-            RiemannIntegral riemannCube(lowerLimit, upperLimit, calcCube);
-            double resInt1 = riemannCube.compute();
-            std::cout << "Cube " << resInt1 << std::endl;
-        } else if (functionType == "cos") {
+            func = calcCube;
+        }
+        else if (functionType == "cos") {
             // Case 2 - cosine - min N needed: 1e3 for 2 digits: -0.00314159
             auto cosine = [](double x) { return std::cos(x); };
-            RiemannIntegral riemannCos(lowerLimit, upperLimit, cosine);
-            double resInt2 = riemannCos.compute();
-            std::cout << "Cosine" << resInt2 << std::endl;
-        } else if (functionType == "sin") {
+            func = cosine;
+        }
+        else if (functionType == "sin") {
             // Case 3 - sine - min N needed: 1e2 for 2 digits: 1.00266
             auto sine = [](double x) { return std::sin(x); };
-            RiemannIntegral riemannSin(lowerLimit, upperLimit, sine);
-            double resInt3 = riemannSin.compute();
-            std::cout << "Sine " << resInt3 << std::endl;
+            func = sine;
         }
+        RiemannIntegral riemannInt(lowerLimit, upperLimit, func);
+        double result = riemannInt.compute();
+        std::cout << "Integral of function " << functionType << " " << result << std::endl;
+
+
     }
 };

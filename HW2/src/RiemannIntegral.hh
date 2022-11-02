@@ -19,7 +19,7 @@ public:
     double lowerBound;
     double upperBound;
     std::function<double(double)> function;
-    unsigned long maxIter = 1e3;
+    unsigned long maxIter = 1e5;
     double deltaX;
 
     double compute();

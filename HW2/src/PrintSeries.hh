@@ -1,6 +1,6 @@
 #include "DumperSeries.hh"
 #include "Series.hh"
-
+#include <memory>
 
 #ifndef HOMEWORK2_PRINTSERIES_H
 #define HOMEWORK2_PRINTSERIES_H
@@ -10,7 +10,7 @@
  */
 class PrintSeries : public DumperSeries {
 public:
-    PrintSeries(Series &series, unsigned long maxIter, unsigned long freq);
+    PrintSeries(std::shared_ptr<Series> series, unsigned long maxIter, unsigned long freq);
 
     virtual ~PrintSeries() {};
 
