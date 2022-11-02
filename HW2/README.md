@@ -79,6 +79,23 @@ After writing the base ```Series``` Class together, we divided the workload amon
 **Exercise 5.1:** 
 _Evaluate the global complexity of your program._
 
+In the previous case of the implementation, we calculated the sum of series as the following: for index i between 1 and N, we stored a common "sum" variable in the class, and increased it by ith term. Therefore, global complexity of calculating the sum was O(n). In addition, we calculated the sum at each given frequency by calculating the entire series from stracth, which makes the overall complexity O(n^2). Note that the complexity converges to O(n) when the frequency is so low that the series is calculated only a few times. 
+
+**Exercise 5.4:** 
+_Evaluate the global complexity of your program._
+
+As we have computed the entire series only once and accesing the result at a given frequency, the complexity is now $O(n\n)$.
+
+**Exercise 5.5:** 
+_In the case you want to reduce the rounding errors over floating point operation by summing terms
+reversely, what is the best complexity you can achieve ?_
+
+In this case, that will again increase the complexity to O(n^2) because at each frequency the sum operation will be executed. 
+
+**Exercise 6.4:** 
+_Do you get the values expected ? For each function, at which value of N do you get the value expected
+(~2 digits after the decimal point)?_
+
 ----
 
 ## Authors
