@@ -35,26 +35,45 @@ HW2/
 - README.md
 
 ### Running the program
-Runs the given problem with different choices for maximum iteration, frequency, series type, output option, and separator type.
-- Series types are defined as: "arithmetic", "pi"
+Build the program as the following: 
+```
+cd sp4e-assignments/HW2
+mkdir build
+cd build 
+cmake ..
+make
+```
+### Series
+To run the series operations the arguments needed are the following:
+- ```exerciseType```: "series"
+- ```maxIter```: maximum number of iterations that the series will be run.
+- ```freq```: frequency at which the series summation will be printed/written.
+- ```seriesType```: type of series, choose "arithmetic" or "pi"
     - "arithmetic" for arithmetic series
     - "pi" for series converging towards pi
-- Output options are defined as: "print", "write"
-    - "print" results in printing on terminal
-    - "write" results in generating an output file
-- Separator types are defined as: "comma", "pipe", "space", "tab"
+- ```separatorType```: separator used in the write IO, choose "comma" "pipe" "space" "tab"
     - "comma" generates a .csv file
     - "pipe" generates a .psv file
     - "space" and "tab" generates a .txt file
+- ```outputOption```: defines how the results will be given, "print", "write"
+    - "print" results in printing on terminal
+    - "write" results in generating an output file called "output"
 
-Please change Run>Edit configurations>Program argument within the order of  maximum iteration, frequency, series type, output option, and separator type.
 An example set of program arguments for maximum 100 iteration with frequency of 10 for pi series to printing on the screen.
 ```cpp
-"100" "10" "pi" "print" ""
+./src/HW2 series 100 10 pi print
 ```
-An example set of program arguments for maximum 150 iteration with frequency of 20 for pi series to writing to an output file.
+An example set of program arguments for maximum 100 iteration with frequency of 10 for arithmetic series to printing on the screen.
 ```cpp
-"150" "20" "pi" "write" "comma"
+./src/HW2 series 100 10 arithmetic print
+```
+An example set of program arguments for maximum 150 iteration with frequency of 20 for pi series to writing to a CSV output file.
+```cpp
+./src/HW2 series 150 20 pi write comma
+```
+An example set of program arguments for maximum 150 iteration with frequency of 20 for arithmetic series to writing to a TXT file.
+```cpp
+./src/HW2 series 150 20 arithmetic write space
 ```
 
 To plot the numerical results saved by ```WriteSeries``` class, go to ```HW2``` directory and run:
@@ -63,10 +82,14 @@ python plot_series.py --file_path output.csv
 python plot_series.py --file_path output.psv
 python plot_series.py --file_path output.txt
 ```
+
 Sample output results after having run the Pi series are already given in the folder. If the command above is run on one of the sample data files, the resulting plot will be the following:
 <p align="center">
 <img src="HW2/figures/SeriesPi.png" width="650" />
 </p>
+
+### Riemann Integral
+
 
 ------
 ## Answers to the questions
