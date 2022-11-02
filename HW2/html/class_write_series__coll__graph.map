@@ -1,0 +1,5 @@
+<map id="WriteSeries" name="WriteSeries">
+<area shape="rect" id="node1" title="class definition for writing series to output files" alt="" coords="12,171,103,197"/>
+<area shape="rect" id="node2" href="$class_dumper_series.html" title="bass class definition for dumper series" alt="" coords="5,95,109,121"/>
+<area shape="rect" id="node3" href="$class_series.html" title="series Base class of series where ComputeArithmetic, ComputePi, and RiemannIntegral inherits from" alt="" coords="28,5,87,32"/>
+</map>

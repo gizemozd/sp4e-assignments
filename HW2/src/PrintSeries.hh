@@ -5,6 +5,9 @@
 #ifndef HOMEWORK2_PRINTSERIES_H
 #define HOMEWORK2_PRINTSERIES_H
 
+/*!
+ * @brief Class definition for printing series to terminal
+ */
 class PrintSeries : public DumperSeries {
 public:
     PrintSeries(Series &series, unsigned long maxIter, unsigned long freq);

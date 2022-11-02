@@ -7,6 +7,9 @@
 #ifndef HOMEWORK2_RIEMANNINTEGRAL_H
 #define HOMEWORK2_RIEMANNINTEGRAL_H
 
+/*!
+ * @brief RiemannIntegral class to calculate integral of chosen function
+ */
 class RiemannIntegral : public Series {
 public:
     RiemannIntegral(double a, double b, std::function<double(double)> f);

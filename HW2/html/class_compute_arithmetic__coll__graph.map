@@ -1,0 +1,4 @@
+<map id="ComputeArithmetic" name="ComputeArithmetic">
+<area shape="rect" id="node1" title="class definition for arithmetic series computation" alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node2" href="$class_series.html" title="series Base class of series where ComputeArithmetic, ComputePi, and RiemannIntegral inherits from" alt="" coords="43,5,101,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_series.html" title="series Base class of series where ComputeArithmetic, ComputePi, and RiemannIntegral inherits from" alt="" coords="5,56,64,83"/>
+<area shape="rect" id="node2" href="$class_compute_arithmetic.html" title="class definition for arithmetic series computation" alt="" coords="112,5,245,32"/>
+<area shape="rect" id="node3" href="$class_compute_pi.html" title="class definition for pi series computation" alt="" coords="135,56,222,83"/>
+<area shape="rect" id="node4" href="$class_riemann_integral.html" title="RiemannIntegral class to calculate integral of chosen function." alt="" coords="121,107,236,133"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Series" name="Series">
+<area shape="rect" id="node1" title="series Base class of series where ComputeArithmetic, ComputePi, and RiemannIntegral inherits from" alt="" coords="177,5,236,32"/>
+<area shape="rect" id="node2" href="$class_compute_arithmetic.html" title="class definition for arithmetic series computation" alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$class_compute_pi.html" title="class definition for pi series computation" alt="" coords="163,80,250,107"/>
+<area shape="rect" id="node4" href="$class_riemann_integral.html" title="RiemannIntegral class to calculate integral of chosen function." alt="" coords="275,80,389,107"/>
+</map>
