@@ -1,6 +1,6 @@
 #include "DumperSeries.hh"
 #include "Series.hh"
-
+#include <memory>
 #ifndef HOMEWORK2_WRITESERIES_H
 #define HOMEWORK2_WRITESERIES_H
 
@@ -9,7 +9,7 @@
  */
 class WriteSeries : public DumperSeries {
 public:
-    WriteSeries(Series &series, unsigned long maxIter);
+    WriteSeries(std::shared_ptr<Series> series, unsigned long maxIter);
 
     virtual ~WriteSeries() {};
 

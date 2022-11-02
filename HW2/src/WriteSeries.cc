@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <memory>
+
 #include "WriteSeries.hh"
 
 /*!
@@ -8,7 +10,7 @@
  * @param series series taken into consideration
  * @param maxIter maximum iteration
  */
-WriteSeries::WriteSeries(Series &series, unsigned long maxIter) : DumperSeries(series) {
+WriteSeries::WriteSeries(std::shared_ptr<Series> series, unsigned long maxIter) : DumperSeries(series) {
     this->maxIter = maxIter;
 };
 
@@ -50,11 +52,11 @@ void WriteSeries::dump(std::ostream &os) {
 
     std::ofstream myFile(relativePath);
 
-    myFile << "Steps" << this->separator << "Convergence Value" << this->separator << "Analytical prediction" << "\n";
+    myFile << "Steps" << this->separator << "Convergence" << this->separator << "Prediction" << "\n";
 
     if (myFile.is_open()) {
         for (unsigned long i = 1; i <= this->maxIter; i++) {
-            myFile << i << this->separator << series.compute(i) << this->separator << series.getAnalyticPrediction()
+            myFile << i << this->separator << series->compute(i) << this->separator << series->getAnalyticPrediction()
                    << std::endl;
         }
         myFile.close();

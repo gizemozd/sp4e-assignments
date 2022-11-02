@@ -1,13 +1,13 @@
 #include <iostream>
 #include "PrintSeries.hh"
-
+#include <memory>
 /*!
  * @brief constructor
  * @param series  series taken into consideration
  * @param maxIter maximum iteration
  * @param freq frequency
  */
-PrintSeries::PrintSeries(Series &series, unsigned long maxIter, unsigned long freq) : DumperSeries(series) {
+PrintSeries::PrintSeries(std::shared_ptr<Series> series, unsigned long maxIter, unsigned long freq) : DumperSeries(series) {
     this->maxIter = maxIter;
     this->freq = freq;
 };
@@ -23,8 +23,8 @@ void PrintSeries::dump(std::ostream &os) {
     double convergenceDiff;
 
     for (unsigned long i = 1; i <= this->maxIter / this->freq; i++) {
-        result = series.compute(i * this->freq);
-        convergenceValue = series.getAnalyticPrediction();
+        result = series->compute(i * this->freq);
+        convergenceValue = series->getAnalyticPrediction();
         // Set precision here
         PrintSeries::setPrecision(10);
         if (std::isnan(convergenceValue)) {
