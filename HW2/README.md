@@ -10,6 +10,7 @@ Minimum requirements and compile options are listed below:
 For C++:
 - cmake_minimum_required (VERSION 2.8.11)
 - add_compile_options(-std=c++14)
+
 For Python:
 - numpy v.1.23.4
 - matplotlib v.3.6.1
@@ -90,6 +91,27 @@ Sample output results after having run the Pi series are already given in the fo
 
 ### Riemann Integral
 
+To run the integral operations the arguments needed are the following:
+- ```exerciseType```: "integral"
+- ```lowerLimit```: lower limit of the definite integral.
+- ```upperLimit```: upper limit of the definite integral.
+- ```functionType```: type of the function inside the integral.
+    - "cos" for cosine
+    - "sin" for sine
+    - "cube" for cubic function.
+
+An example set of program arguments for taking the integral of a cubic function from 0 to 1.
+```cpp
+./src/HW2 integral 0 1 cube
+```
+An example set of program arguments for taking the integral of a cosine function from 0 to pi.
+```cpp
+./src/HW2 integral 0 3.14159 cos
+```
+An example set of program arguments for taking the integral of a sine function from 0 to pi/2.
+```cpp
+./src/HW2 integral 0 1.5707  sin
+```
 
 ------
 ## Answers to the questions
