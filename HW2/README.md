@@ -44,7 +44,7 @@ cd build
 cmake ..
 make
 ```
-### Series
+### Series
 To run the series operations the arguments needed are the following:
 - ```exerciseType```: "series"
 - ```maxIter```: maximum number of iterations that the series will be run.
