@@ -2,6 +2,7 @@
 #include <sstream>      // std::stringstream
 #include <cstring>
 #include <string>
+#include <fstream>
 #include "Series.hh"
 #include "ComputeArithmetic.hh"
 #include "ComputePi.hh"
@@ -31,22 +32,18 @@ int main(int argc, char *argv[]) {
     double lowerLimit, upperLimit;
     std::string functionType;
 
-    std::cout << argc << std::endl;
-    std::cout << argv[1] << std::endl;
 
     if (strcmp(argv[1], "series") == 0) {
-        std::cout << argv[1] << "series" << std::endl;
-
         ss << argv[1] << ' ' << argv[2] << ' ' << argv[3] << ' ' << argv[4] << ' ' << argv[5] << ' ' << argv[6]
            << std::endl;
         ss >> exerciseType >> maxIter >> freq >> seriesType >> outputOption >> separatorType;
 
-        std::cout << "exerciseType: " << exerciseType << std::endl;
-        std::cout << "maxIter: " << maxIter << std::endl;
-        std::cout << "freq: " << freq << std::endl;
-        std::cout << "seriesType: " << seriesType << std::endl;
-        std::cout << "outputOption: " << outputOption << std::endl;
-        std::cout << "separatorType: " << separatorType << std::endl;
+        std::cout << "exercise type: " << exerciseType << std::endl;
+        std::cout << "maximum iteration: " << maxIter << std::endl;
+        std::cout << "frequency: " << freq << std::endl;
+        std::cout << "series type: " << seriesType << std::endl;
+        std::cout << "output option: " << outputOption << std::endl;
+        std::cout << "separator type: " << separatorType << std::endl;
 
         char separator;
         if (separatorType == "comma") {
@@ -69,8 +66,18 @@ int main(int argc, char *argv[]) {
         }
 
         if (outputOption == "print") {
-            PrintSeries printingseriestest(pi_series, maxIter, freq);
-            printingseriestest.dump();
+            PrintSeries printingSeries(pi_series, maxIter, freq);
+
+            std::string fileName = "output";
+            std::string relativePath = "..\\..\\";
+            std::string fileExt = ".txt";
+
+            relativePath = relativePath + fileName + fileExt;
+
+            std::ofstream myfile(relativePath);
+            myfile << printingSeries;
+            myfile.close();
+
         } else if (outputOption == "write") {
             WriteSeries testFileToOutput(pi_series, maxIter);
             testFileToOutput.setSeparator(separator);
@@ -79,15 +86,13 @@ int main(int argc, char *argv[]) {
             std::cout << "Invalid output choice is given" << std::endl;
         }
     } else if (strcmp(argv[1], "integral") == 0) {
-        std::cout << argv[1] << "integral" << std::endl;
-
         ss << argv[1] << ' ' << argv[2] << ' ' << argv[3] << ' ' << argv[4] << std::endl;
         ss >> exerciseType >> lowerLimit >> upperLimit >> functionType;
 
-        std::cout << "exerciseType: " << exerciseType << std::endl;
-        std::cout << "lowerLimit: " << lowerLimit << std::endl;
-        std::cout << "upperLimit: " << upperLimit << std::endl;
-        std::cout << "functionType: " << functionType << std::endl;
+        std::cout << "exercise type: " << exerciseType << std::endl;
+        std::cout << "lower limit: " << lowerLimit << std::endl;
+        std::cout << "upper limit: " << upperLimit << std::endl;
+        std::cout << "function type: " << functionType << std::endl;
 
         if (functionType == "cube") {
             // Case 1 - cube - min N needed: 1e2 for 2 digits: 0.255025

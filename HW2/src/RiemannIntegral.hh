@@ -7,9 +7,10 @@
 #ifndef HOMEWORK2_RIEMANNINTEGRAL_H
 #define HOMEWORK2_RIEMANNINTEGRAL_H
 
-class RiemannIntegral: public Series{
+class RiemannIntegral : public Series {
 public:
     RiemannIntegral(double a, double b, std::function<double(double)> f);
+
     virtual ~RiemannIntegral() {};
 
     double lowerBound;
@@ -17,8 +18,11 @@ public:
     std::function<double(double)> function;
     unsigned long maxIter = 1e3;
     double deltaX;
+
     double compute();
+
     double getXi(unsigned long k);
+
     double computeTerm(unsigned long k) override;
 };
 

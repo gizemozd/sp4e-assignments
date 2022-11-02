@@ -6,10 +6,12 @@
 /*!
  * @brief class definition for pi series computation
  */
-class ComputePi: public Series{
+class ComputePi : public Series {
 public:
     double compute(unsigned long N) override;
+
     double computeTerm(unsigned long k) override;
+
     double getAnalyticPrediction() override;
 };
 

@@ -6,9 +6,10 @@
 /*!
  * @brief class definition for arithmetic series computation
  */
-class ComputeArithmetic: public Series{
+class ComputeArithmetic : public Series {
 public:
     double getAnalyticPrediction() override;
+
     double computeTerm(unsigned long k) override;
 };
 

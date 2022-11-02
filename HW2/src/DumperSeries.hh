@@ -18,7 +18,7 @@ protected:
     Series &series;
 };
 
-inline std::ostream & operator <<(std::ostream & stream, DumperSeries & _this) {
+inline std::ostream &operator<<(std::ostream &stream, DumperSeries &_this) {
     _this.dump(stream);
     return stream;
 }

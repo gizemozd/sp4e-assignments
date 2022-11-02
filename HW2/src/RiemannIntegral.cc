@@ -15,7 +15,7 @@ RiemannIntegral::RiemannIntegral(double a, double b, std::function<double(double
     this->lowerBound = a;
     this->upperBound = b;
     this->function = f;
-    this->deltaX = (1.0*(b - a)) / (1.0*this->maxIter);
+    this->deltaX = (1.0 * (b - a)) / (1.0 * this->maxIter);
 };
 
 /*!
@@ -23,8 +23,8 @@ RiemannIntegral::RiemannIntegral(double a, double b, std::function<double(double
  * @param k
  * @return
  */
-double RiemannIntegral::getXi(unsigned long k){
-    return (1.0*this->lowerBound) + (1.0*this->deltaX*k);
+double RiemannIntegral::getXi(unsigned long k) {
+    return (1.0 * this->lowerBound) + (1.0 * this->deltaX * k);
 };
 
 /*!
@@ -32,16 +32,16 @@ double RiemannIntegral::getXi(unsigned long k){
  * @param k kth term
  * @return computed term
  */
-double RiemannIntegral::computeTerm(unsigned long k){
+double RiemannIntegral::computeTerm(unsigned long k) {
     double currentX = this->getXi(k);
-    return 1.0*this->function(currentX)*this->deltaX;
+    return 1.0 * this->function(currentX) * this->deltaX;
 };
 
 /*!
  * @brief
  * @return
  */
-double RiemannIntegral::compute(){
+double RiemannIntegral::compute() {
     return Series::compute(this->maxIter);
 };
 

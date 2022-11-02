@@ -4,9 +4,9 @@
  * @brief analytical prediction of series summation is returned
  * @return result of prediction
  */
-double ComputeArithmetic::getAnalyticPrediction(){
+double ComputeArithmetic::getAnalyticPrediction() {
     double result;
-    result = 1.*this->currentTerm*(this->currentTerm + 1)/2.;
+    result = 1. * this->currentTerm * (this->currentTerm + 1) / 2.;
     return result;
 };
 
@@ -15,6 +15,6 @@ double ComputeArithmetic::getAnalyticPrediction(){
  * @param k term number
  * @return computed term at the index k
  */
-double ComputeArithmetic::computeTerm(unsigned long k){
-    return 1.*k;
+double ComputeArithmetic::computeTerm(unsigned long k) {
+    return 1. * k;
 };

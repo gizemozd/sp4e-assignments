@@ -9,12 +9,15 @@
  */
 class WriteSeries : public DumperSeries {
 public:
-    WriteSeries(Series& series, unsigned long maxIter);
+    WriteSeries(Series &series, unsigned long maxIter);
+
     virtual ~WriteSeries() {};
 
     unsigned int maxIter;
     unsigned int freq;
-    void dump(std::ostream & os = std::cout) override;
+
+    void dump(std::ostream &os = std::cout) override;
+
     void setSeparator(char c);
 
 protected:

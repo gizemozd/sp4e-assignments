@@ -31,7 +31,8 @@ void PrintSeries::dump(std::ostream &os) {
             std::cerr << "The convergence is nan!";
         } else {
             convergenceDiff = convergenceValue - result;
-            os << "Iteration: " << i * this->freq << " Result: " << result << " Convergence diff: " << convergenceDiff << std::endl;
+            os << "Iteration: " << i * this->freq << " Result: " << result << " Convergence diff: " << convergenceDiff
+               << std::endl;
         }
     }
 };
