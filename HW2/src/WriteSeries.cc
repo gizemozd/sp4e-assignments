@@ -55,14 +55,16 @@ void WriteSeries::dump(std::ostream & os){
 
     myFile << "Steps" << this->separator << "Convergence Value" << this->separator << "Analytical prediction" <<"\n";
 
-    if (myFile.is_open())
-    {
-        for (unsigned long i = 1; i <= this->maxIter; i++) {
-                myFile << i << this->separator << series.compute(i) << this->separator << series.getAnalyticPrediction() << std::endl;
-        }
+//    if (myFile.is_open())
+//    {
+//        for (unsigned long i = 1; i <= this->maxIter; i++) {
+//                myFile << i << this->separator << series.compute(i) << this->separator << series.getAnalyticPrediction() << std::endl;
+//        }
+//
+//        myFile.close();
+//    }
+//    else std::cout << "Unable to open file";
 
-        myFile.close();
-    }
-    else std::cout << "Unable to open file";
+
 
 };

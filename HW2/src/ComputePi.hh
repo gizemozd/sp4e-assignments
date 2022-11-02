@@ -1,5 +1,5 @@
-#ifndef TEST_HW2_V2_COMPUTEPI_H
-#define TEST_HW2_V2_COMPUTEPI_H
+#ifndef HW2_COMPUTEPI_H
+#define HW2_COMPUTEPI_H
 
 #include "Series.hh"
 
@@ -13,4 +13,4 @@ public:
     double getAnalyticPrediction() override;
 };
 
-#endif //TEST_HW2_V2_COMPUTEPI_H
+#endif //HW2_COMPUTEPI_H

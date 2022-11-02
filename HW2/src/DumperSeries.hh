@@ -1,7 +1,7 @@
 #include "Series.hh"
 
-#ifndef TEST_HW2_V2_DUMPERSERIES_H
-#define TEST_HW2_V2_DUMPERSERIES_H
+#ifndef HW2_DUMPERSERIES_H
+#define HW2_DUMPERSERIES_H
 
 /*!
  * @brief bass class definition for dumper series
@@ -23,4 +23,4 @@ inline std::ostream & operator <<(std::ostream & stream, DumperSeries & _this) {
     return stream;
 }
 
-#endif //TEST_HW2_V2_DUMPERSERIES_H
+#endif //HW2_DUMPERSERIES_H

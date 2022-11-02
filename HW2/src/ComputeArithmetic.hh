@@ -1,5 +1,5 @@
-#ifndef TEST_HW2_V2_COMPUTEARITHMETIC_H
-#define TEST_HW2_V2_COMPUTEARITHMETIC_H
+#ifndef HW2_COMPUTEARITHMETIC_H
+#define HW2_COMPUTEARITHMETIC_H
 
 #include "Series.hh"
 
@@ -12,4 +12,4 @@ public:
     double computeTerm(unsigned long k) override;
 };
 
-#endif //TEST_HW2_V2_COMPUTEARITHMETIC_H
+#endif //HW2_COMPUTEARITHMETIC_H
