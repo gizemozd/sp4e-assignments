@@ -62,19 +62,19 @@ To run the series operations the arguments needed are the following:
 
 An example set of program arguments for maximum 100 iteration with frequency of 10 for pi series to printing on the screen.
 ```cpp
-./src/HW2 series 100 10 pi print
+./src/HW2 "series" "100" "10" "pi" "print" ""
 ```
 An example set of program arguments for maximum 100 iteration with frequency of 10 for arithmetic series to printing on the screen.
 ```cpp
-./src/HW2 series 100 10 arithmetic print
+./src/HW2 "series" "100" "10" "arithmetic" "print" ""
 ```
 An example set of program arguments for maximum 150 iteration with frequency of 20 for pi series to writing to a CSV output file.
 ```cpp
-./src/HW2 series 150 20 pi write comma
+./src/HW2 "series" "150" "20" "pi" "write" "comma"
 ```
 An example set of program arguments for maximum 150 iteration with frequency of 20 for arithmetic series to writing to a TXT file.
 ```cpp
-./src/HW2 series 150 20 arithmetic write space
+./src/HW2 "series" "150" "20" "arithmetic" "write" "space"
 ```
 
 To plot the numerical results saved by ```WriteSeries``` class, go to ```HW2``` directory and run:
