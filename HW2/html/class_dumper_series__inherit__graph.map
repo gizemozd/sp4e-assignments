@@ -1,0 +1,5 @@
+<map id="DumperSeries" name="DumperSeries">
+<area shape="rect" id="node1" title="bass class definition for dumper series" alt="" coords="53,5,157,32"/>
+<area shape="rect" id="node2" href="$class_print_series.html" title="Class definition for printing series to terminal." alt="" coords="5,80,92,107"/>
+<area shape="rect" id="node3" href="$class_write_series.html" title="class definition for writing series to output files" alt="" coords="117,80,207,107"/>
+</map>
