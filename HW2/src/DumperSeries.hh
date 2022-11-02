@@ -18,4 +18,9 @@ protected:
     Series &series;
 };
 
+inline std::ostream & operator <<(std::ostream & stream, DumperSeries & _this) {
+    _this.dump(stream);
+    return stream;
+}
+
 #endif //TEST_HW2_V2_DUMPERSERIES_H
