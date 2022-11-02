@@ -25,6 +25,8 @@ void PrintSeries::dump(std::ostream &os) {
     for (unsigned long i = 1; i <= this->maxIter / this->freq; i++) {
         result = series.compute(i * this->freq);
         convergenceValue = series.getAnalyticPrediction();
+        // Set precision here
+        PrintSeries::setPrecision(10)
         if (std::isnan(convergenceValue)) {
             std::cerr << "The convergence is nan!";
         } else {
