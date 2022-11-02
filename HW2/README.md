@@ -135,11 +135,14 @@ As we have computed the entire series only once and accesing the result at a giv
 _In the case you want to reduce the rounding errors over floating point operation by summing terms
 reversely, what is the best complexity you can achieve ?_
 
-In this case, that will again increase the complexity to O(n^2) because at each frequency the sum operation will be executed. 
+In this case, that will again increase the complexity to O(n) because at each frequency the sum operation will be executed. 
 
 **Exercise 6.4:** 
 _Do you get the values expected ? For each function, at which value of N do you get the value expected
 (~2 digits after the decimal point)?_
+Case 1 - cube - min N needed: 1e2 for 2 digits: 0.255025
+Case 2 - cosine - min N needed: 1e3 for 2 digits: -0.00314159
+Case 3 - sine - min N needed: 1e2 for 2 digits: 1.00266
 
 ----
 
