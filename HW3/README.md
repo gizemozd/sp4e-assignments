@@ -23,6 +23,7 @@ For Python:
 <p align="center" >
 <img src="HW3/figures/classHierarchy2.png" width="600" />
 </p>
+Doxyfile is included in the directory, therefore the documentation can be generated using doxywizard.
 
 ### Running the program
 Build the program as the following: 
@@ -49,7 +50,10 @@ make
 
 **Exercise 1.1:** 
 _Describe in your README how the particles are organized in the various objects?_
-
+<p align="center" >
+<img src="HW3/figures/classHierarchy3.png" width="600" />
+</p>
+MaterialPointsFactory and MaterialPoint are the child classes of ParticlesFactoryInterface and Particle classes, respectively. Three different type of objects are inherited from each of these two base clasess.
 
 
 **Exercise 4.5:** 
