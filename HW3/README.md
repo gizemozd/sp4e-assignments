@@ -10,6 +10,8 @@ Minimum requirements and compile options are listed below:
 For C++:
 - cmake_minimum_required (VERSION 2.8.11)
 - add_compile_options(-std=c++14)
+- FFTW version 3.3.10
+- GoogleTest v1.12.1
 
 For Python:
 - numpy v.1.23.4
@@ -17,8 +19,10 @@ For Python:
 - csv v.1.0
 
 ## Usage
-### The HW2 directory contains the following structure:
-
+### The HW3 directory contains the following structure:
+<p align="center" >
+<img src="HW3/figures/classHierarchy2.png" width="400" />
+</p>
 
 ### Running the program
 Build the program as the following: 
