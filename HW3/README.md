@@ -33,6 +33,11 @@ cd build
 cmake ..
 make
 ```
+### Executing generate_input.py
+
+### Executing heat_distribution.py
+
+
 ### Interface Implementation
 
 
