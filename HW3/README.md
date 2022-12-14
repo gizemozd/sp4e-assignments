@@ -65,7 +65,24 @@ _Implement a python script to generate a heat distribution within a provided rad
 **Exercise 4.6:** 
 _Describe how to launch such a stimulation which will produce dumps observable with Paraview for a
 grid of 512 × 512 particles._
+Required steps to launch the simulation with Paraview:
+1. File > Open > 'heat_file_input.csv' > Open Data With CSV Reader
+2. In the Properties window
+    - Deselect 'Have Headers'
+    - Change 'Field Delimiter Characters' to space as ' '
+    - Click on Apply
+3. On the menu, go to Filters > Search and search for 'Table to Points' and press enter
+4. In the Properties window 
+    - Choose X,Y, and Z columns as Field 0, Field 1, and Field 2, respectively
+    - Select 2D points
+    - Click Apply
+    - Under Display (GeometryRepresentation) change Coloring to Field 10 for temperature visulatization, Field 11 for the heat visualization
+    - Click show/hide color legend for the legend
 
+Sample results from with random temperature field rendering is presented below:
+<p align="center" >
+<img src="HW3/figures/rendering.png" width="600" />
+</p>
 ----
 
 ## Authors
