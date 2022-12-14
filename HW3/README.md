@@ -3,7 +3,7 @@
 # Homework 3
 
 ## Description
-Repository containing the second assignment for MATH-611: Scientific Programming for Engineers. The goal of this exercise is to get familiar with the concepts related to object oriented programming in C++.
+Repository containing the third assignment for MATH-611: Scientific Programming for Engineers. The goal of this exercise is to use an external library made for scientific computing and adapt it to our needs through a wrapping interface. FFTW library is used to code a heat equation solver.
 
 ## Requirements
 Minimum requirements and compile options are listed below:
