@@ -64,6 +64,9 @@ protected:
 /*****************************************************************/
 // Ex 4 - 2 test
 TEST_F(RandomParticles, Homogeneous) {
+    /*!
+     * @brief test to check results of homogeneous temperature
+     */
   Real initial_temperature=10.;
   UInt time_steps=50;
 
@@ -100,6 +103,9 @@ TEST_F(RandomParticles, Homogeneous) {
 //*****************************************************************/
 // Ex 4 - 3 test
 TEST_F(RandomParticles, VolumetricEx3) {
+    /*!
+     * @brief test for a volumetric heat source with sin wave equilibrium temperature
+     */
   UInt time_steps=10;
   // Let's set the properties again
   // Variables
@@ -160,6 +166,9 @@ TEST_F(RandomParticles, VolumetricEx3) {
 ///*****************************************************************/
 //// Ex 4 - 4 test
 TEST_F(RandomParticles, VolumetricEx4) {
+    /*!
+     * @brief test for a volumetric heat source with lines at the equilibrium temperature
+     */
   UInt time_steps=10;
   // Let's set the properties again
   temperature->rho = 1.0;

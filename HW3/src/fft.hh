@@ -9,7 +9,11 @@
 /* ------------------------------------------------------ */
 // Struct is a class where everything is public.
 struct FFT {
-
+/*!
+ * @brief FFT structure to help to use FFTW library manipulations
+ * @param m matrix to use in calculations
+ * @return
+ */
   static Matrix<complex> transform(Matrix<complex>& m);
   static Matrix<complex> itransform(Matrix<complex>& m);
 
@@ -17,7 +21,11 @@ struct FFT {
 };
 
 /* --------------------------FORWARD TRANSFORM---------------------------- */
-
+/*!
+ * @brief forward transform
+ * @param m_in input matrix
+ * @return output matrix
+ */
 inline Matrix<complex> FFT::transform(Matrix<complex>& m_in) {
     // Forward Fourier Transform
     UInt rows = m_in.rows();
@@ -55,7 +63,11 @@ inline Matrix<complex> FFT::transform(Matrix<complex>& m_in) {
 };
 
 /* --------------------------INVERSE---------------------------- */
-
+/*!
+ * @brief inverse transform
+ * @param m_in input matrix
+ * @return output matrix
+ */
 inline Matrix<complex> FFT::itransform(Matrix<complex>& m_in) {
     // Inverse Fourier Transform
     UInt rows = m_in.rows();
@@ -95,7 +107,11 @@ inline Matrix<complex> FFT::itransform(Matrix<complex>& m_in) {
 };
 
 /* ------------------------------------------------------ */
-
+/*!
+ * @brief function which computes the wavenumbers
+ * @param size grid size
+ * @return output matrix
+ */
 inline Matrix<std::complex<int>> FFT::computeFrequencies(int size) {
 
     Matrix<std::complex<int>> m_out(size);

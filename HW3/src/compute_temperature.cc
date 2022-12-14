@@ -4,6 +4,9 @@
 #include <cmath>
 
 /* -------------------------------------------------------------------------- */
+/*!
+ * @brief Compute Temperature class
+ */
 ComputeTemperature::ComputeTemperature()
 {
   //FIXME later setters
@@ -13,6 +16,10 @@ ComputeTemperature::ComputeTemperature()
   this->deltaT = 0.001;
 };
 
+/*!
+ * @brief a function for computing the heat distribution
+ * @param system system input
+ */
 void ComputeTemperature::compute(System& system) {
   // Initialize the matrices
   UInt noParticles = system.getNbParticles();

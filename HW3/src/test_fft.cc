@@ -4,6 +4,9 @@
 #include <complex>
 /*****************************************************************/
 TEST(FFT, transform) {
+    /*!
+     * @brief test to check results of forward transformm
+     */
   UInt N = 512;
   Matrix<complex> m(N);
 
@@ -36,6 +39,9 @@ TEST(FFT, transform) {
 /*****************************************************************/
 
 TEST(FFT, inverse_transform) {
+    /*!
+     * @brief test to check results of inverse transform
+     */
   UInt N = 512;
   Matrix<complex> m(N);
 
@@ -65,7 +71,9 @@ TEST(FFT, inverse_transform) {
 /*****************************************************************/
 
 TEST(FFT, compute_frequencies) {
-
+/*!
+ * @brief test to check results of wavenumbers computation
+ */
   double python_res [] = {
           0.0, 1.0, 2.0, 3.0, 4.0,
           5.0, 6.0, 7.0, 8.0, 9.0,

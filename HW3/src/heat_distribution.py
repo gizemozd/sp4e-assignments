@@ -15,8 +15,8 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('--xlim', action='store', type=float, default=[-1.,1.], nargs='+', help='Upper and lower limits for the x axis')
     parser.add_argument('--ylim', action='store', type=float, default=[-1.,1.], nargs='+', help='Upper and lower limits for the y axis')
-    parser.add_argument('--pn_x', action='store', type=int, default=8, help="Number of particlesi in x direction")
-    parser.add_argument('--pn_y', action='store', type=int, default=8, help="Number of particlesi in y direction")
+    parser.add_argument('--pn_x', action='store', type=int, default=8, help="Number of particles in x direction")
+    parser.add_argument('--pn_y', action='store', type=int, default=8, help="Number of particles in y direction")
     parser.add_argument('--plot', action='store_true', help="Plots the heat distribution")
     parser.add_argument(
         '--radius', action='store', type=float, default=0.5,
