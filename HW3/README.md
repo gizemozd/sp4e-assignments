@@ -40,7 +40,8 @@ Note that there should be a folder named ```dumps``` under the build directory. 
 cd cmake-build-debug
 mkdir dumps
 ```
-Then, run the following command to run the particles code for material point.
+Then, run the following command to run the particles code for material point. 
+The arguments are: [iterations] [dump frequency] [initial data] [particle type] [time step]
 ```python
 cd cmake-build-debug
 ./hw3 10 1 ../heat_file.csv material_point 0.0001
@@ -118,7 +119,8 @@ Sample results from with random heat field and temperature distribution renderin
 <p align="center" >
 <img src="HW3/figures/rendering.png" width="1000" />
 </p>
-----
+
+------
 
 ## Authors
 Pembe Gizem Özdil, Zeynep Özge Orhan
