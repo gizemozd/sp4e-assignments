@@ -9,7 +9,6 @@
  */
 ComputeTemperature::ComputeTemperature()
 {
-  //FIXME later setters
   this->rho = 1;
   this->heatCapacity = 1;
   this->heatConductivity = 1;
@@ -55,7 +54,7 @@ void ComputeTemperature::compute(System& system) {
   Real eqConstant = (1.0 / (this->rho * this->heatCapacity));
   for (UInt i = 0; i < matrixSize; i++) {
     for (UInt j = 0; j < matrixSize; j++) {
-      // Coordinates - FIXME SOMETHING IS WRONG HERE.
+      // Coordinates 
       // Convert frequencies into rad/sec
       Real q_x = std::real(fourierCoords(i,j)) * 2.0 * M_PI;
       Real q_y = std::imag(fourierCoords(i,j)) * 2.0 * M_PI;
