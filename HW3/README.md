@@ -80,7 +80,9 @@ _Describe in your README how the particles are organized in the various objects?
 </p>
 MaterialPointsFactory and MaterialPoint are the child classes of ParticlesFactoryInterface and Particle classes, respectively. Three different type of objects are inherited from each of these two base clasess.
 
+MaterialPoint class is derived from Particle class. Within the MaterialPointsFactory class, material points are created.
 
+Matrix struct is class template that allows manipulation of 2D matrix. The FFT struct is a class used for the manipulations with FFTW library.
 
 **Exercise 4.5:** 
 _Implement a python script to generate a heat distribution within a provided radius as given in Equation 5.Explain in the README how you integrate this condition within the existing code._
