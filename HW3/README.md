@@ -21,7 +21,7 @@ For Python:
 ## Usage
 ### The HW3 directory contains the following structure:
 <p align="center" >
-<img src="HW3/figures/classHierarchy2.png" width="400" />
+<img src="HW3/figures/classHierarchy2.png" width="600" />
 </p>
 
 ### Running the program
@@ -33,6 +33,11 @@ cd build
 cmake ..
 make
 ```
+### Executing generate_input.py
+
+### Executing heat_distribution.py
+
+
 ### Interface Implementation
 
 
