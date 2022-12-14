@@ -35,6 +35,13 @@ cmake ..
 make
 ```
 ### Executing particles code
+Note that there should be a folder named ```dumps``` under the build directory. To create it, first run the following:
+```python
+cd cmake-build-debug
+mkdir dumps
+```
+Then, run the following command to run the particles code for material point. 
+The arguments are: [iterations] [dump frequency] [initial data] [particle type] [time step]
 ```python
 cd cmake-build-debug
 ./hw3 10 1 ../heat_file.csv material_point 0.0001
@@ -108,11 +115,12 @@ Required steps to launch the simulation with Paraview:
     - Under Display (GeometryRepresentation) change Coloring to Field 10 for temperature visulatization, Field 11 for the heat visualization
     - Click show/hide color legend for the legend
 
-Sample results from with random temperature field rendering is presented below:
+Sample results from with random heat field and temperature distribution rendering is presented below:
 <p align="center" >
 <img src="HW3/figures/rendering.png" width="1000" />
 </p>
-----
+
+------
 
 ## Authors
 Pembe Gizem Özdil, Zeynep Özge Orhan
