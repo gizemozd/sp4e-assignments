@@ -1,10 +1,6 @@
 # Sp4e Assignments
 
 # Homework 4
-# TO-DO
-* Check if ex 6 is working as expected. Check the locations of input output folders and pypart imports or not.
-* Exercise 7.
-* Read me.
 
 ## Description
 Repository containing the third assignment for MATH-611: Scientific Programming for Engineers. The goal of this exercise is to use an external library Pybind11 to create Python bindingd of the C++ Particles' code.
@@ -53,29 +49,46 @@ make
 
 To simulate the planet trajectories for 365 days with a timestep of 1 day, run the following:
 ```bash
-$ python3 main.py 365 1 ../init.csv planet 1
+$ python3 main.py --exercise main  --nb_steps 365 --freq 1 --filename ../init.csv --particle_type planet --timestep 1
 ```
+The required arguments to run this exercise:
+- ```--exercise```: specify the name of the exercise
+    - "main" to ensure the script works for all types of particle 
+    - "compute" to compare planet positions
+    - "launchsim" to launch simulation with scaled velocity input and compute the error in the trajectory
+    - "optimize" to optimize initial velocity input and plot the evolution of the error vs the scaling factor
+- ```--nb_steps```: specify the number of steps to perform
+- ```--freq```: specify the frequency for dumps
+- ```--filename```: start/input filename
+- ```--particle_type```: particle type
+- ```--timestep```: timestep
 
 Note that this will require a folder called `dumps`, make sure that you create the so-called folder under the cmake folder by running the following:
 ```bash
 mkdir dumps
 ````
 
-### Exercise 5
+### Exercise 5 - Compute
 
 To run the scripts for Exercise 5:
 ```bash
-$ python exercise5.py --planet_name jupiter --directory ../dumps --directory_ref ../trajectories
-$ python exercise5.py --planet_name sun --directory ../dumps --directory_ref ../trajectories --plot
-$ python exercise5.py --planet_name mercury --directory ../dumps --directory_ref ../trajectories --plot
+$ python3 main.py --exercise compute --planet_name jupiter --directory dumps --directory_ref trajectories
+$ python3 main.py --exercise compute --planet_name sun --directory dumps --directory_ref trajectories --plot
+$ python3 main.py --exercise compute --planet_name mercury --directory dumps --directory_ref trajectories --plot
 ```
-
 To plot the trajectories, simple append `--plot` to the command which will save the figure as well.
 
-:warning: ADD SOME FIGURES HERE :warning:
-<p align="center" >
-<img src="HW4/imgs/eart_positions.png" width="600" />
-</p>
+The required arguments to run this exercise:
+- ```--exercise```: specify the name of the exercise
+    - "main" to ensure the script works for all types of particle 
+    - "compute" to compare planet positions
+    - "launchsim" to launch simulation with scaled velocity input and compute the error in the trajectory
+    - "optimize" to optimize initial velocity input and plot the evolution of the error vs the scaling factor
+- ```--directory```: specify the directory containing the output files
+- ```--directory_ref```:  specify the directory containing the reference output files
+- ```--plot```: plot the resulting trajectories
+
+Calculated positions and the reference positions for the tJupiter and Mercury is presented in the below figures:
 <p align="center" >
 <img src="HW4/imgs/jupiter_positions.png" width="600" />
 </p>
@@ -83,32 +96,76 @@ To plot the trajectories, simple append `--plot` to the command which will save 
 <img src="HW4/imgs/mercury_positions.png" width="600" />
 </p>
 
-### Exercise 6
+### Exercise 6 - Launch Simulation
 
 Script to launch simulation with scaled velocity input and compute the error in the trajectory.
 
 Example usage:
 ```bash
-$ python exercise6.py --planet_name jupiter --filename ../init_scaled.csv --nsteps 1000 --freq 10 --scale 1000
+$ python3 main.py --exercise launchsim --planet_name jupiter --filename ../init.csv --nb_steps 365 --freq 1 --scale 1
+$ python3 main.py --exercise launchsim --planet_name mercury --filename ../init.csv --nb_steps 365 --freq 1 --scale 100 --plot
 ```
-
 To plot the trajectories, simple append `--plot` to the command which will save the figure as well.
 
-:warning: WARNING ABOUT THE DIRECTORY :warning:
+The required arguments to run this exercise:
+- ```--exercise```: specify the name of the exercise
+    - "main" to ensure the script works for all types of particle 
+    - "compute" to compare planet positions
+    - "launchsim" to launch simulation with scaled velocity input and compute the error in the trajectory
+    - "optimize" to optimize initial velocity input and plot the evolution of the error vs the scaling factor
+- ```--planet_name```: specify the name of the planet
+- ```--filename```: start/input filename
+- ```--nb_steps```: specify the number of steps to perform
+- ```--freq```: specify the frequency for dumps
+- ```--scale```: spescale factor for the velocity
+- ```--plot```: plot the resulting trajectories
+
+The effect of the scaling factor for the position calculations can be seen as a comparison between the below figures:
+<p align="center" >
+<img src="HW4/imgs/earthSimulationScale1.png" width="600" />
+</p>
+<p align="center" >
+<img src="HW4/imgs/earthSimulationScale10.png" width="600" />
+</p>
 
 ### Exercise 7
 Script to optimize initial velocity input and plot the evolution of the error vs the scaling factor.
 
 Example usage:
 ```bash
-$ python exercise7.py --planet_name mercury --filename ../init.csv --nsteps 1000 --freq 10 --scale 1000
+$ python3 main.py --exercise optimization --planet_name mercury --filename ../init.csv --nb_steps 365 --freq 1 --max_iter 20 --init_guess 5 --plot
 ```
+To plot the trajectories, simple append `--plot` to the command which will save the figure as well.
 
-:warning: WARNING ABOUT THE DIRECTORY :warning:
+The required arguments to run this exercise:
+- ```--exercise```: specify the name of the exercise
+    - "main" to ensure the script works for all types of particle 
+    - "compute" to compare planet positions
+    - "launchsim" to launch simulation with scaled velocity input and compute the error in the trajectory
+    - "optimize" to optimize initial velocity input and plot the evolution of the error vs the scaling factor
+- ```--planet_name```: specify the name of the planet
+- ```--filename```: start/input filename
+- ```--nb_steps```: specify the number of steps to perform
+- ```--freq```: specify the frequency for dumps
+- ```--max_iter```: maximum iteration for the optimization
+- ```--init_guess```: initial guess for the optimization
+- ```--plot```: plot the resulting trajectories
 
+Mercury positions are plotted with given initial velocity as shown in the below figure.
+<p align="center" >
+<img src="HW4/imgs/mercuryPositionsbeforeOpt.png" width="600" />
+</p>
+<p align="center" >
+
+After running the optimization routine, mercury positions are calculated to verify the optimization result. By using optimization result as initial velocity, the calculated mercury positions are presented in the below figure:
+<img src="HW4/imgs/mercuryPositionsafterOpt.png" width="600" />
+</p>
+
+The calculated scaling factors during the optimization for the initial velocity can be presented as:
+<p align="center" >
+<img src="HW4/imgs/optimizationSteps.png" width="400" />
+</p>
 ------
 
 ## Authors
 Pembe Gizem Özdil, Zeynep Özge Orhan
-
-
