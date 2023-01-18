@@ -45,6 +45,17 @@ make
 
 2. The references to the Compute objects type are correctly can be managed by taking advantage of the return value policy annotations provided by Pybind11. These annotations can be passed to the module_::def() and class_::def() functions. As also suggested in the Pybind11 documentation, smart pointers can be an alternative method to manage the memory. The use of smart pointers eliminates the necessity of return value policy.
 
+### NOTE: 
+* To run the python code, you first need to navigate to `cmake-build-debug` directory. 
+* If you receive submodule error, run the following commands in the repository's root directory:
+```bash
+$ git submodule add -f https://github.com/pybind/pybind11.git HW4/src/pybind11
+$ git submodule add -f https://github.com/google/googletest.git HW4/src/googletest
+$ git submodule add -f https://gitlab.com/libeigen/eigen.git HW4/src/eigen    
+
+```
+
+
 ### Exercise 4
 
 To simulate the planet trajectories for 365 days with a timestep of 1 day, run the following:
