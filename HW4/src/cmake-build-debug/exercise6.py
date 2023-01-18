@@ -139,7 +139,6 @@ def runAndComputeError(
     positions = readPositions(planet_name, 'dumps')
     positions_ref = readPositions(planet_name, 'trajectories')
 
-    print(positions)
     # Compute the error between the reference and the computed trajectories
     error = computeError(positions, positions_ref)
 
