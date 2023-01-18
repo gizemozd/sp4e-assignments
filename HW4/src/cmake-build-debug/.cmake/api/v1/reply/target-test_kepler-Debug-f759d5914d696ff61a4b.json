@@ -32,13 +32,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 57,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 59,
+				"line" : 60,
 				"parent" : 0
 			},
 			{
@@ -69,13 +69,13 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 44,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 72,
+				"line" : 73,
 				"parent" : 0
 			}
 		]
@@ -96,21 +96,21 @@
 			[
 				{
 					"backtrace" : 8,
-					"path" : "/home/nely/Courses/sp4e-exercises/exercises/week14/particles-pybind/starting_point/eigen"
+					"path" : "/home/nely/Courses/new/sp4e-assignments/HW4/src/eigen"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/home/nely/Courses/sp4e-exercises/exercises/week14/particles-pybind/starting_point/."
+					"path" : "/home/nely/Courses/new/sp4e-assignments/HW4/src/."
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/home/nely/Courses/sp4e-exercises/exercises/week14/particles-pybind/starting_point/googletest/googletest/include"
+					"path" : "/home/nely/Courses/new/sp4e-assignments/HW4/src/googletest/googletest/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/home/nely/Courses/sp4e-exercises/exercises/week14/particles-pybind/starting_point/googletest/googletest"
+					"path" : "/home/nely/Courses/new/sp4e-assignments/HW4/src/googletest/googletest"
 				}
 			],
 			"language" : "CXX",
@@ -132,15 +132,15 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "part::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "gtest::@f95b5c00bd49b3b4698d"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "gtest_main::@f95b5c00bd49b3b4698d"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "part::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "test_kepler::@6890427a1f51a3e7e1df",
@@ -157,7 +157,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/nely/Courses/sp4e-exercises/exercises/week14/particles-pybind/starting_point/cmake-build-debug",
+				"fragment" : "-Wl,-rpath,/home/nely/Courses/new/sp4e-assignments/HW4/src/cmake-build-debug",
 				"role" : "libraries"
 			},
 			{
@@ -178,18 +178,6 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "-lpthread",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lfftw3",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lfftw3f",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lfftw3l",
 				"role" : "libraries"
 			},
 			{
